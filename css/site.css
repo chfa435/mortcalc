@@ -1,0 +1,56 @@
+
+:root{
+    --cf-dark-color: #292929;
+    --cf-light-color: #dfe3e4;
+    --cf-primary-color: #001e43;
+    --cf-secondary-color: #ff993b;
+}
+
+body{
+    color: var(--cf-dark-color);
+    font-size: 1.2rem;
+}
+
+nav{
+    background-color: var(--cf-dark-color);
+}
+
+main>.container {
+    padding: 60px 15px 0;
+    margin-bottom: 5rem;
+}
+.sticky-footer {
+    position: sticky;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: var(--cf-dark-color);
+    color: var(--cf-light-color);
+}
+
+.technicons{
+    font-size: 4rem;
+}
+
+.socialicons>a {
+    color: var(--cf-light-color);
+    font-size: 1.5rem;
+}
+
+.socialicons>a:hover {
+    color: var(--cf-secondary-color);
+}
+
+.checklist{
+    list-style: none;
+}
+.checklist i{
+    color: var(--cf-secondary-color);
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.messageStyle{
+    font-size: 1rem;
+    font-weight: bold;
+}
