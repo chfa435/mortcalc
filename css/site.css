@@ -1,17 +1,16 @@
-
-:root{
+:root {
     --cf-dark-color: #292929;
     --cf-light-color: #dfe3e4;
     --cf-primary-color: #001e43;
     --cf-secondary-color: #ff993b;
 }
 
-body{
+body {
     color: var(--cf-dark-color);
     font-size: 1.2rem;
 }
 
-nav{
+nav {
     background-color: var(--cf-dark-color);
 }
 
@@ -19,6 +18,7 @@ main>.container {
     padding: 60px 15px 0;
     margin-bottom: 5rem;
 }
+
 .sticky-footer {
     position: sticky;
     left: 0;
@@ -28,7 +28,7 @@ main>.container {
     color: var(--cf-light-color);
 }
 
-.technicons{
+.technicons {
     font-size: 4rem;
 }
 
@@ -41,16 +41,33 @@ main>.container {
     color: var(--cf-secondary-color);
 }
 
-.checklist{
+.checklist {
     list-style: none;
 }
-.checklist i{
+
+.checklist i {
     color: var(--cf-secondary-color);
     font-size: 1.5rem;
     font-weight: bold;
 }
 
-.messageStyle{
+.messageStyle {
     font-size: 1rem;
     font-weight: bold;
+}
+
+.loanForm {
+    background-color: var(--cf-light-color);
+    margin: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    border-radius: 10px;
+}
+
+.loanInfo  {
+    background-color: var(--cf-light-color);
+    margin: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    border-radius: 10px;
 }

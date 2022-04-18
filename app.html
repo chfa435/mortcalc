@@ -2,7 +2,7 @@
 <html lang="en" class="h-100">
 
 <head>
-    <title>APP NAME: Coding Challenge By Chad Farmer</title>
+    <title>Loan Calculator: Coding Challenge By Chad Farmer</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -34,7 +34,7 @@
         <div class="container-fluid">
             <a class="navbar-brand" href="/index.html">
                 <img src="/img/Chad Farmer Development_lig_clov-tp.png" width="40" height="40"
-                    class="d-inline-block align-text-top-me-1"> REWIND
+                    class="d-inline-block align-text-top-me-1"> Loan Calculator
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
                 aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -46,7 +46,7 @@
                         <a class="nav-link" href="/index.html">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/app.html">The App</a>
+                        <a class="nav-link active" aria-current="page" href="/app.html">Loan Calculator</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/code.html">The Code</a>
@@ -64,21 +64,75 @@
 
     <main class="flex-shrink-0">
         <div class="container mt-5">
-            <h1>Rewind: A javascript challenge</h1>
-            <h4 class="lead">Enter a message and hit the button. The program will print the message in reverse. </h4>
-            <div class="row align-items-end mt-5">
-                <div class="col">
-                    <label for="txtMessage" class="form-label">Message</label>
-                    <input type="text" name="txtMessage" class="form-control" id="txtMessage" placeholder="Enter Message">
+            <h1>Loan Calculator</h1>
+            <div class="row">
+                <!-- Loan Input Form -->
+                <div class="col loanForm">
+                    <form>
+                        <div class="row gy-2">
+                            <div class="col-6">
+                                <label for="lamount">Loan Amount:</label>
+                            </div>
+                            <div class="col-6 text-end">
+                                <input type="number" class="form-control" id="lamount" value="15000" name="lamount">
+                            </div>
+                            <div class="col-6">
+                                <label for="lterm">Payments:</label>
+                            </div>
+                            <div class="col-6 text-end">
+                                <input type="number" class="form-control" id="lterm" value="60" name="lterm">
+                            </div>
+                            <div class="col-6">
+                                <label for="lrate">Rate:</label>
+                            </div>
+                            <div class="col-6 text-end">
+                                <input type="number" class="form-control" id="lrate" value="3" name="lrate">
+                            </div>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-12 text-end">
+                                <button id="btnSubmit" type="button" class="btn btn-outline-primary">Calc Loan</button>
+                            </div>
+
+                        </div>
+                    </form>
                 </div>
-                <div class="col">
-                    <button id="btnSubmit" class="btn btn-primary">Reverse Me!</button>
+                <!-- Loan Results Display -->
+                <div class="col loanInfo text-center">
+                    <h1> Your Monthly Payment</h1>
+                    <div id="payment" class="display-5 text-center">
+                        $250.00
+                    </div>
+                    <div class="row">
+                        <div class="col-6 text-start">Total Principal</div>
+                        <div class="col-6 text-end" id="totalPrincipal">$0.00</div>
+                        <div class="col-6 text-start">Total Interest</div>
+                        <div class="col-6 text-end" id="totalInterest">$0.00</div>
+                        <div class="col-6 text-start">Total Cost</div>
+                        <div class="col-6 text-end" id="totalCost">$0.00</div>
+                    </div>
                 </div>
+
             </div>
-            <div class="messageStyle mt-5">
-                <ol id="results" class="">
-                    <!-- My message will go here -->
-                </ol>
+            <!-- row for amoritization -->
+            <div class="row">
+                <div class="col">
+                    <table class="table table-striped table-hover">
+                        <thead class="table-dark">
+                            <tr>
+                                <th>Month</th>
+                                <th>Payment</th>
+                                <th>Principal</th>
+                                <th>Interest</th>
+                                <th>Total Interest</th>
+                                <th>Balance</th>
+                            </tr>
+                        </thead>
+                        <tbody id="scheduleBody">
+                            <!-- template data goes here>-->
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </main>
@@ -110,6 +164,16 @@
         </div>
     </footer>
 
+    <template id="scheduleTemplate">
+        <tr>
+            <td data-id="Month"></td>
+            <td data-id="Payment"></td>
+            <td data-id="Principal"></td>
+            <td data-id="Interest"></td>
+            <td data-id="TotalInterest"></td>
+            <td data-id="Balance"></td>
+        </tr>
+    </template>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
@@ -121,7 +185,7 @@
     </script>
 
     <script>
-        document.getElementById("btnSubmit").addEventListener("click", getMessage);
+        document.getElementById("btnSubmit").addEventListener("click", getValues);
     </script>
 </body>
 
